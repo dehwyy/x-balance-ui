@@ -61,7 +61,7 @@ const bgOptions: BgOption[] = [
 
 <template>
   <Dialog :open="props.open" @update:open="emit('update:open', $event)">
-    <DialogContent class="sm:max-w-md" style="background: oklch(0.14 0.005 286 / 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-color: oklch(1 0 0 / 0.08);">
+    <DialogContent class="sm:max-w-md settings-dialog-content">
       <DialogHeader>
         <DialogTitle>{{ t('settings.title') }}</DialogTitle>
       </DialogHeader>

@@ -20,6 +20,6 @@ export default defineConfig({
     command: 'VITE_USE_MOCK=true bun dev',
     url: 'http://localhost:5173',
     reuseExistingServer: !process.env.CI,
-    timeout: 30000,
+    timeout: 60000,
   },
 })
