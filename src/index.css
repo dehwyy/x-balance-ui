@@ -1,0 +1,333 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --animate-accordion-down: accordion-down 0.15s ease-out;
+  --animate-accordion-up: accordion-up 0.15s ease-out;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.65rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.141 0.005 285.823);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.141 0.005 285.823);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.141 0.005 285.823);
+  --primary: oklch(0.586 0.253 17.585);
+  --primary-foreground: oklch(0.969 0.015 12.422);
+  --secondary: oklch(0.967 0.001 286.375);
+  --secondary-foreground: oklch(0.21 0.006 285.885);
+  --muted: oklch(0.967 0.001 286.375);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: oklch(0.967 0.001 286.375);
+  --accent-foreground: oklch(0.21 0.006 285.885);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.92 0.004 286.32);
+  --input: oklch(0.92 0.004 286.32);
+  --ring: oklch(0.712 0.194 13.428);
+  --chart-1: oklch(0.81 0.117 11.638);
+  --chart-2: oklch(0.645 0.246 16.439);
+  --chart-3: oklch(0.586 0.253 17.585);
+  --chart-4: oklch(0.514 0.222 16.935);
+  --chart-5: oklch(0.455 0.188 13.697);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.141 0.005 285.823);
+  --sidebar-primary: oklch(0.586 0.253 17.585);
+  --sidebar-primary-foreground: oklch(0.969 0.015 12.422);
+  --sidebar-accent: oklch(0.967 0.001 286.375);
+  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
+  --sidebar-border: oklch(0.92 0.004 286.32);
+  --sidebar-ring: oklch(0.712 0.194 13.428);
+}
+
+.dark {
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.645 0.246 16.439);
+  --primary-foreground: oklch(0.969 0.015 12.422);
+  --secondary: oklch(0.274 0.006 286.033);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.41 0.159 10.272);
+  --chart-1: oklch(0.81 0.117 11.638);
+  --chart-2: oklch(0.645 0.246 16.439);
+  --chart-3: oklch(0.586 0.253 17.585);
+  --chart-4: oklch(0.514 0.222 16.935);
+  --chart-5: oklch(0.455 0.188 13.697);
+  --sidebar: oklch(0.21 0.006 285.885);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.645 0.246 16.439);
+  --sidebar-primary-foreground: oklch(0.969 0.015 12.422);
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.41 0.159 10.272);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 9999px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: var(--muted-foreground);
+  }
+
+  html {
+    scrollbar-gutter: stable;
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+  }
+
+  body {
+    @apply text-foreground;
+    background: transparent;
+    min-height: 100vh;
+  }
+
+  button,
+  [role="button"],
+  a,
+  [type="button"],
+  [type="submit"],
+  [type="reset"],
+  select,
+  label[for],
+  summary,
+  [data-slot="menu-item"],
+  [data-slot="dropdown-menu-item"],
+  [data-slot="sidebar-menu-button"],
+  [data-slot="select-item"] {
+    cursor: pointer;
+  }
+}
+
+/* ============================================================
+   BACKGROUND PRESETS (6 variants)
+   Applied via html.dark[data-bg="N"]
+   Default = "1" (Crimson)
+   ============================================================ */
+
+/* 1 — Crimson (red-primary) */
+html.dark,
+html.dark[data-bg="1"] {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 75% 55% at 8% 0%, oklch(0.586 0.253 17.585 / 0.32) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 60% at 92% 100%, oklch(0.274 0.006 286.033 / 0.22) 0%, transparent 55%);
+}
+
+/* 2 — Aurora (teal + indigo) */
+html.dark[data-bg="2"] {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 75% 55% at 8% 0%, oklch(0.65 0.17 168 / 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 60% at 92% 100%, oklch(0.5 0.18 265 / 0.22) 0%, transparent 55%);
+}
+
+/* 3 — Dusk (violet + rose) */
+html.dark[data-bg="3"] {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 75% 55% at 8% 0%, oklch(0.55 0.2 295 / 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 60% at 92% 100%, oklch(0.65 0.22 5 / 0.22) 0%, transparent 55%);
+}
+
+/* 4 — Midnight (deep blue) */
+html.dark[data-bg="4"] {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -10%, oklch(0.45 0.18 255 / 0.35) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 5% 95%, oklch(0.3 0.08 270 / 0.2) 0%, transparent 50%);
+}
+
+/* 5 — Ember (amber + orange) */
+html.dark[data-bg="5"] {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 75% 55% at 8% 0%, oklch(0.68 0.2 55 / 0.28) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 60% at 92% 100%, oklch(0.58 0.22 30 / 0.2) 0%, transparent 55%);
+}
+
+/* 6 — Forest (emerald + teal) */
+html.dark[data-bg="6"] {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(ellipse 75% 55% at 8% 0%, oklch(0.55 0.18 155 / 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 60% at 92% 100%, oklch(0.5 0.15 185 / 0.2) 0%, transparent 55%);
+}
+
+/* ============================================================
+   GLASSMORPHISM — glass token shared across all surfaces
+   All surfaces use the SAME base opacity (~28%) for visual
+   coherence. backdrop-filter blurs the gradient behind them.
+   ============================================================ */
+:root {
+  --glass-bg: oklch(0.16 0.006 286 / 0.28);
+  --glass-border: oklch(1 0 0 / 0.07);
+  --glass-blur: blur(12px);
+  --glass-shadow: 0 2px 16px oklch(0 0 0 / 0.2);
+}
+
+/* Cards */
+.dark [data-slot="card"] {
+  background-color: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-color: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Sidebar */
+.dark [data-slot="sidebar"] {
+  background-color: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-right: 1px solid var(--glass-border);
+}
+
+/* Popover & dropdown */
+.dark [data-slot="popover-content"],
+.dark [data-slot="dropdown-menu-content"],
+.dark [data-slot="select-content"] {
+  background-color: oklch(0.16 0.006 286 / 0.85);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-color: var(--glass-border);
+}
+
+/* Dialog / Sheet overlay bg */
+.dark [data-slot="sheet-content"] {
+  background-color: oklch(0.14 0.005 286 / 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Buttons — outline */
+.dark [data-slot="button"][data-variant="outline"] {
+  background-color: oklch(1 0 0 / 0.04);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-color: oklch(1 0 0 / 0.1);
+}
+
+.dark [data-slot="button"][data-variant="outline"]:hover {
+  background-color: oklch(1 0 0 / 0.08);
+}
+
+/* Buttons — ghost */
+.dark [data-slot="button"][data-variant="ghost"]:hover {
+  background-color: oklch(1 0 0 / 0.06);
+}
+
+/* Buttons — secondary */
+.dark [data-slot="button"][data-variant="secondary"] {
+  background-color: oklch(0.274 0.006 286.033 / 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid oklch(1 0 0 / 0.07);
+}
+
+/* ============================================================
+   FONT SIZE (5 options)
+   ============================================================ */
+html[data-font-size="xs"] { font-size: 11px; }
+html[data-font-size="sm"] { font-size: 13px; }
+html[data-font-size="md"] { font-size: 14px; }
+html[data-font-size="lg"] { font-size: 16px; }
+html[data-font-size="xl"] { font-size: 18px; }
+
+/* ============================================================
+   PAGE TRANSITIONS
+   ============================================================ */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+/* ============================================================
+   ACCORDION ANIMATIONS
+   ============================================================ */
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--reka-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--reka-accordion-content-height); }
+  to { height: 0; }
+}
